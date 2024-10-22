@@ -15,7 +15,6 @@
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "@gtm-support/vue-gtm": "^3.1.0",
     "lodash.debounce": "^4.0.8",
-    "oh-vue-icons": "^1.0.0-rc3",
     "vue": "^3.5.12",
     "vue-router": "^4.4.5"
   },

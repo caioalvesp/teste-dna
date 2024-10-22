@@ -1,29 +1,64 @@
-# desafio-dna
+## Página de Produtos - Teste DNA For Marketing
 
-This template should help get you started developing with Vue 3 in Vite.
+Página desenvolvida em Vue.js que exibe uma lista de produtos.
 
-## Recommended IDE Setup
+## Tecnologias e metodologias utilizadas
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Vue.js
+- Vite
+- Vue GTM
+- Lodash Debounce
+- Font Awesome
 
-## Customize configuration
+## Passo a passo para execução do projeto
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+Essas instruções farão com que você tenha uma cópia do projeto em execução na sua máquina local para fins de desenvolvimento e teste.
 
-## Project Setup
+## Pré-Requisitos
 
-```sh
-npm install
+```
+- Node >= 20.18.0
+- NPM >= 10.8.2
 ```
 
-### Compile and Hot-Reload for Development
+## Instalação
 
-```sh
+**1 - Clonar o projeto**
+
+```
+git clone https://github.com/caioalvesp/teste-dna.git
+```
+
+**2 - Entrar na raiz do projeto e instalar dependências**
+
+```
+- cd teste-dna
+- npm install
+```
+
+**3 - Rodar em modo de desenvolvimento**
+
+```
 npm run dev
 ```
 
-### Compile and Minify for Production
+OBS: ao rodar o comando npm run dev, será aberta automaticamente uma página no seu navegador, apontando para http://localhost:5173, caso isso não aconteça, basta acessar a url manualmente. A página irá recarregar automaticamente caso haja alguma edição.
 
-```sh
+**4 - Build da aplicação para produção**
+
+```
 npm run build
 ```
+
+OBS: Cria o aplicativo para produção na pasta `dist`.
+Ele agrupa corretamente o Vue no modo de produção e otimiza o build para obter o melhor desempenho.
+A compilação é reduzida e os nomes dos arquivos incluem os hashes. <br>
+
+**5 - Encontrar informações enviadas ao Google Tag Manager**
+
+```
+Acessar o console do navegador apertando a tecla F12
+```
+
+OBS: ao abrir o console, digitar o comando `dataLayer` para acessar o objeto com as informações enviadas ao GTM.
+Estão sendo rastreados os eventos de busca e clique no produto.
