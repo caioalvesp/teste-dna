@@ -6,7 +6,18 @@
       />
     </button>
 
-    <img :src="product.image" alt="Gabinete" />
+    <div class="image-container">
+      <div v-if="!isImageLoaded" class="placeholder"></div>
+
+      <img
+        class="product-image"
+        v-if="product.image"
+        :src="product.image"
+        alt="{{ product.name }}"
+        @load="onImageLoad"
+        v-show="isImageLoaded"
+      />
+    </div>
 
     <h4>{{ product.name.toUpperCase() }}</h4>
 
@@ -32,8 +43,32 @@
   box-shadow: 5px 7px 22px 8px rgba(0, 0, 0, 0.24);
 }
 
-.card > img {
+.image-container {
+  position: relative;
   width: 100%;
+  height: 200px;
+}
+
+/* Placeholder */
+.placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.placeholder::before {
+  content: 'Loading...';
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .btn {
@@ -59,7 +94,8 @@ export default {
   props: ['product', 'index'],
   data() {
     return {
-      isFavorited: false
+      isFavorited: false,
+      isImageLoaded: false
     };
   },
   methods: {
@@ -76,6 +112,10 @@ export default {
 
       // Alterna o estado de favoritado
       this.isFavorited = !this.isFavorited;
+    },
+    onImageLoad() {
+      // Quando a imagem carregar, alterar o estado para exibi-la
+      this.isImageLoaded = true;
     }
   },
   mounted() {
